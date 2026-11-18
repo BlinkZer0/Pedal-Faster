@@ -1,0 +1,7 @@
+# build outputs (the real build lives in %LOCALAPPDATA%\PedalFaster)
+build/
+dist/
+out/
+.vs/
+*.user
+CMakeUserPresets.json

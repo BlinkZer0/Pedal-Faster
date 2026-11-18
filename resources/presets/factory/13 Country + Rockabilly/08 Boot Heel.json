@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.country.boot-heel",
+  "name": "Boot Heel",
+  "category": "Country & Rockabilly",
+  "description": "Rockabilly crunch with tape slap.",
+  "author": "Pedal Faster",
+  "tags": [
+    "rockabilly",
+    "crunch",
+    "tape"
+  ],
+  "gainLevel": 3,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "class_a_chime",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.42,
+      "bass": 0.45,
+      "mid": 0.55,
+      "treble": 0.6,
+      "presence": 0.55,
+      "master": 0.45,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "mid_overdrive",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "drive": 0.3,
+        "tone": 0.6,
+        "mid": 0.5,
+        "level": 0.55
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "tape_delay",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.22,
+      "parameters": {
+        "timeMs": 120.0,
+        "sync": 0.0,
+        "feedback": 0.15,
+        "saturation": 0.4,
+        "wow": 0.2,
+        "flutter": 0.3,
+        "tone": 0.5
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "spring_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.12,
+      "parameters": {
+        "decay": 1.4,
+        "tone": 0.5,
+        "character": 0.5,
+        "dwell": 0.3
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -6.95
+}

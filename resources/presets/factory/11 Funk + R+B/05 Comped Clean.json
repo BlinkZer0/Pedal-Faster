@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.funk.comped-clean",
+  "name": "Comped Clean",
+  "category": "Funk & R&B",
+  "description": "Neo-soul comping clean with chorus.",
+  "author": "Pedal Faster",
+  "tags": [
+    "funk",
+    "r&b",
+    "clean",
+    "chorus"
+  ],
+  "gainLevel": 0,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "studio_clean",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.2,
+      "bass": 0.5,
+      "mid": 0.5,
+      "treble": 0.55,
+      "presence": 0.5,
+      "master": 0.45,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.35,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "compressor",
+      "position": "pre",
+      "enabled": true,
+      "mix": 1.0,
+      "parameters": {
+        "thresholdDb": -22.0,
+        "ratio": 3.0,
+        "attackMs": 10.0,
+        "releaseMs": 150.0,
+        "makeupDb": 3.0,
+        "kneeDb": 6.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "chorus",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.3,
+      "parameters": {
+        "rateHz": 0.7,
+        "depth": 0.3,
+        "voices": 1.0,
+        "width": 0.7,
+        "delayMs": 12.0,
+        "tone": 0.8
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "plate_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.12,
+      "parameters": {
+        "decay": 1.3,
+        "predelayMs": 10.0,
+        "damping": 0.4,
+        "lowCutHz": 120.0,
+        "modulation": 0.5
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": 0.55
+}

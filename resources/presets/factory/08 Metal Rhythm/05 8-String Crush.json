@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.metal-rhythm.8-string-crush",
+  "name": "8-String Crush",
+  "category": "Metal Rhythm",
+  "description": "Extended-range crush with an extra-tight low end.",
+  "author": "Pedal Faster",
+  "tags": [
+    "metal",
+    "extended-range",
+    "djent",
+    "tight"
+  ],
+  "gainLevel": 8,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "modern_metal",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.65,
+      "bass": 0.4,
+      "mid": 0.6,
+      "treble": 0.6,
+      "presence": 0.6,
+      "master": 0.5,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "closed_4x12",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 110.0,
+    "highCutHz": 7500.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "noise_gate",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "thresholdDb": -50.0,
+        "attackMs": 1.0,
+        "holdMs": 40.0,
+        "releaseMs": 60.0,
+        "hysteresisDb": 6.0,
+        "rangeDb": -80.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "mid_overdrive",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "drive": 0.1,
+        "tone": 0.7,
+        "mid": 0.7,
+        "level": 0.8
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "parametric_eq",
+      "position": "post",
+      "enabled": true,
+      "parameters": {
+        "lowFreq": 80.0,
+        "lowGain": 2.0,
+        "lowQ": 0.7,
+        "midFreq": 450.0,
+        "midGain": -3.0,
+        "midQ": 1.2,
+        "highFreq": 4000.0,
+        "highGain": 0.0,
+        "highQ": 0.7,
+        "outputDb": 0.0
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -5.87
+}

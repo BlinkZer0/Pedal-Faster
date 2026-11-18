@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.hardstyle.hard-anthem",
+  "name": "Hard Anthem",
+  "category": "Hardstyle",
+  "description": "Stadium hardstyle anthem lead.",
+  "author": "Pedal Faster",
+  "tags": [
+    "electronic",
+    "hardstyle",
+    "anthem",
+    "lead"
+  ],
+  "gainLevel": 7,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "hot_rod_lead",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.75,
+      "bass": 0.5,
+      "mid": 0.55,
+      "treble": 0.6,
+      "presence": 0.6,
+      "master": 0.55,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "closed_4x12",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "noise_gate",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "thresholdDb": -54.0,
+        "attackMs": 1.0,
+        "holdMs": 40.0,
+        "releaseMs": 120.0,
+        "hysteresisDb": 6.0,
+        "rangeDb": -80.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "harmonizer",
+      "position": "pre",
+      "enabled": true,
+      "mix": 1.0,
+      "parameters": {
+        "interval": 10.0,
+        "voice2": 9.0,
+        "level": 0.4,
+        "spread": 1.0
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "digital_delay",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.2,
+      "parameters": {
+        "timeMs": 400.0,
+        "sync": 7.0,
+        "feedback": 0.3,
+        "stereo": 2.0,
+        "spread": 0.5,
+        "lowCutHz": 80.0,
+        "highCutHz": 9000.0
+      }
+    },
+    {
+      "slotId": "slot-4",
+      "type": "hall_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.28,
+      "parameters": {
+        "size": 0.9,
+        "decay": 5.0,
+        "diffusion": 0.7,
+        "damping": 0.4,
+        "predelayMs": 20.0,
+        "modulation": 0.4,
+        "shimmer": 0.0,
+        "lowCutHz": 100.0
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "tempoBpm": 150.0,
+  "outputGainDb": -2.51
+}

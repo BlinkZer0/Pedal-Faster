@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.dubstep.brostep-growl",
+  "name": "Brostep Growl",
+  "category": "Dubstep",
+  "description": "Aggressive growl: fuzz, envelope filter and crush.",
+  "author": "Pedal Faster",
+  "tags": [
+    "electronic",
+    "dubstep",
+    "brostep",
+    "growl"
+  ],
+  "gainLevel": 9,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "modern_metal",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.5,
+      "bass": 0.6,
+      "mid": 0.5,
+      "treble": 0.55,
+      "presence": 0.55,
+      "master": 0.5,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "closed_4x12",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 60.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "noise_gate",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "thresholdDb": -50.0,
+        "attackMs": 1.0,
+        "holdMs": 40.0,
+        "releaseMs": 120.0,
+        "hysteresisDb": 6.0,
+        "rangeDb": -80.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "fuzz",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "sustain": 0.8,
+        "tone": 0.55,
+        "bias": 0.45,
+        "level": 0.45
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "envelope_filter",
+      "position": "pre",
+      "enabled": true,
+      "mix": 1.0,
+      "parameters": {
+        "sensitivity": 0.8,
+        "attackMs": 2.0,
+        "decayMs": 120.0,
+        "q": 12.0,
+        "direction": 0.0,
+        "mode": 1.0,
+        "base": 0.1
+      }
+    },
+    {
+      "slotId": "slot-4",
+      "type": "bitcrusher",
+      "position": "pre",
+      "enabled": true,
+      "mix": 0.4,
+      "parameters": {
+        "bits": 8.0,
+        "downsample": 2.0,
+        "tone": 0.8,
+        "outputDb": 0.0
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "tempoBpm": 140.0,
+  "outputGainDb": -0.05
+}

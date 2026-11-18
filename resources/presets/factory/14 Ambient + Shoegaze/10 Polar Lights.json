@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.ambient.polar-lights",
+  "name": "Polar Lights",
+  "category": "Ambient & Shoegaze",
+  "description": "Shimmering, slowly-flanged aurora.",
+  "author": "Pedal Faster",
+  "tags": [
+    "ambient",
+    "flanger",
+    "shimmer"
+  ],
+  "gainLevel": 2,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "class_a_chime",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.22,
+      "bass": 0.45,
+      "mid": 0.5,
+      "treble": 0.55,
+      "presence": 0.5,
+      "master": 0.4,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.4,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "flanger",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.35,
+      "parameters": {
+        "rateHz": 0.05,
+        "depth": 0.7,
+        "feedback": 0.4,
+        "delayMs": 4.0,
+        "stereo": 0.5
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "hall_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.45,
+      "parameters": {
+        "size": 0.9,
+        "decay": 8.0,
+        "diffusion": 0.7,
+        "damping": 0.4,
+        "predelayMs": 20.0,
+        "modulation": 0.4,
+        "shimmer": 0.4,
+        "lowCutHz": 100.0
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": 2.84
+}

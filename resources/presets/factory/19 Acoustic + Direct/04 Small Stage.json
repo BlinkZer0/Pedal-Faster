@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.acoustic.small-stage",
+  "name": "Small Stage",
+  "category": "Acoustic & Direct",
+  "description": "Stage-ready acoustic DI with feedback-safe low cut.",
+  "author": "Pedal Faster",
+  "tags": [
+    "acoustic",
+    "live",
+    "stage"
+  ],
+  "gainLevel": 0,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "studio_clean",
+    "enabled": false,
+    "parameters": {
+      "gain": 0.4,
+      "bass": 0.5,
+      "mid": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "master": 0.5,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "direct",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 90.0,
+    "highCutHz": 13000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "compressor",
+      "position": "pre",
+      "enabled": true,
+      "mix": 1.0,
+      "parameters": {
+        "thresholdDb": -20.0,
+        "ratio": 3.0,
+        "attackMs": 10.0,
+        "releaseMs": 150.0,
+        "makeupDb": 3.0,
+        "kneeDb": 6.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "parametric_eq",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "lowFreq": 120.0,
+        "lowGain": -4.0,
+        "lowQ": 0.7,
+        "midFreq": 220.0,
+        "midGain": -3.0,
+        "midQ": 1.0,
+        "highFreq": 4000.0,
+        "highGain": 1.0,
+        "highQ": 0.7,
+        "outputDb": 0.0
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "plate_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.1,
+      "parameters": {
+        "decay": 1.2,
+        "predelayMs": 10.0,
+        "damping": 0.4,
+        "lowCutHz": 120.0,
+        "modulation": 0.5
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": 6.38
+}

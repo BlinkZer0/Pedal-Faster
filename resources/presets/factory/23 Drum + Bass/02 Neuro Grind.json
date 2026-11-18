@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.dnb.neuro-grind",
+  "name": "Neuro Grind",
+  "category": "Drum & Bass",
+  "description": "Grinding neuro-style filtered distortion.",
+  "author": "Pedal Faster",
+  "tags": [
+    "electronic",
+    "dnb",
+    "neuro",
+    "filter"
+  ],
+  "gainLevel": 6,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "bass_di",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.5,
+      "bass": 0.55,
+      "mid": 0.55,
+      "treble": 0.5,
+      "presence": 0.5,
+      "master": 0.5,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "bass_4x10",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 30.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "noise_gate",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "thresholdDb": -52.0,
+        "attackMs": 1.0,
+        "holdMs": 40.0,
+        "releaseMs": 120.0,
+        "hysteresisDb": 6.0,
+        "rangeDb": -80.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "high_gain_distortion",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "gain": 0.6,
+        "bass": 0.55,
+        "middle": 0.6,
+        "treble": 0.5,
+        "presence": 0.5,
+        "level": 0.45
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "auto_wah",
+      "position": "pre",
+      "enabled": true,
+      "mix": 1.0,
+      "parameters": {
+        "rateHz": 1.5,
+        "sync": 10.0,
+        "depth": 0.8,
+        "resonance": 0.7,
+        "sensitivity": 0.2,
+        "centre": 0.45,
+        "mode": 1.0
+      }
+    },
+    {
+      "slotId": "slot-4",
+      "type": "phaser",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.4,
+      "parameters": {
+        "rateHz": 0.3,
+        "depth": 0.6,
+        "feedback": 0.6,
+        "stages": 3.0,
+        "centre": 0.5,
+        "stereo": 0.5
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "tempoBpm": 174.0,
+  "outputGainDb": -9.68
+}

@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.metal-rhythm.silent-gate",
+  "name": "Silent Gate",
+  "category": "Metal Rhythm",
+  "description": "Extreme gating for stop-start riffs with zero hiss.",
+  "author": "Pedal Faster",
+  "tags": [
+    "metal",
+    "gated",
+    "silent",
+    "tight"
+  ],
+  "gainLevel": 9,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": true,
+    "thresholdDb": -55.0,
+    "releaseMs": 30.0
+  },
+  "amp": {
+    "type": "modern_metal",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.7,
+      "bass": 0.5,
+      "mid": 0.5,
+      "treble": 0.62,
+      "presence": 0.6,
+      "master": 0.5,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "closed_4x12",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 90.0,
+    "highCutHz": 7600.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "noise_gate",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "thresholdDb": -45.0,
+        "attackMs": 0.5,
+        "holdMs": 10.0,
+        "releaseMs": 30.0,
+        "hysteresisDb": 8.0,
+        "rangeDb": -80.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "mid_overdrive",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "drive": 0.12,
+        "tone": 0.65,
+        "mid": 0.6,
+        "level": 0.78
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -5.68
+}

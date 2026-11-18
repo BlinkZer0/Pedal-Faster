@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.metal-rhythm.groove-anchor",
+  "name": "Groove Anchor",
+  "category": "Metal Rhythm",
+  "description": "Groove-metal mids for locked-in riffs.",
+  "author": "Pedal Faster",
+  "tags": [
+    "metal",
+    "groove",
+    "mids"
+  ],
+  "gainLevel": 9,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "modern_metal",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.62,
+      "bass": 0.5,
+      "mid": 0.62,
+      "treble": 0.58,
+      "presence": 0.55,
+      "master": 0.55,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "closed_4x12",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 85.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "noise_gate",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "thresholdDb": -52.0,
+        "attackMs": 1.0,
+        "holdMs": 40.0,
+        "releaseMs": 120.0,
+        "hysteresisDb": 6.0,
+        "rangeDb": -80.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "hard_distortion",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "gain": 0.2,
+        "tone": 0.6,
+        "bias": 0.0,
+        "level": 0.7
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -6.46
+}

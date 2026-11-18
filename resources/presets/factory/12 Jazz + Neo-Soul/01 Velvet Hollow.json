@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.jazz.velvet-hollow",
+  "name": "Velvet Hollow",
+  "category": "Jazz & Neo-Soul",
+  "description": "Velvet hollow-body warmth.",
+  "author": "Pedal Faster",
+  "tags": [
+    "jazz",
+    "warm",
+    "clean",
+    "hollow"
+  ],
+  "gainLevel": 0,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "studio_clean",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.2,
+      "bass": 0.6,
+      "mid": 0.5,
+      "treble": 0.35,
+      "presence": 0.35,
+      "master": 0.45,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.6,
+    "lowCutHz": 70.0,
+    "highCutHz": 6500.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "plate_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.12,
+      "parameters": {
+        "decay": 1.4,
+        "predelayMs": 10.0,
+        "damping": 0.6,
+        "lowCutHz": 120.0,
+        "modulation": 0.5
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": 1.21
+}

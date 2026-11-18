@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.dubstep.sub-wobble",
+  "name": "Sub Wobble",
+  "category": "Dubstep",
+  "description": "Sub-octave wobble that shakes the room.",
+  "author": "Pedal Faster",
+  "tags": [
+    "electronic",
+    "dubstep",
+    "sub",
+    "wobble"
+  ],
+  "gainLevel": 1,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "bass_di",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.35,
+      "bass": 0.65,
+      "mid": 0.5,
+      "treble": 0.45,
+      "presence": 0.45,
+      "master": 0.5,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "bass_1x15",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 25.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "octaver",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "sub1": 0.65,
+        "sub2": 0.0,
+        "up": 0.0,
+        "direct": 0.6,
+        "tracking": 0.7
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "auto_wah",
+      "position": "pre",
+      "enabled": true,
+      "mix": 1.0,
+      "parameters": {
+        "rateHz": 1.5,
+        "sync": 6.0,
+        "depth": 1.0,
+        "resonance": 0.6,
+        "sensitivity": 0.0,
+        "centre": 0.35,
+        "mode": 1.0
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "tempoBpm": 140.0,
+  "outputGainDb": -1.17
+}

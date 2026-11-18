@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.hard-rock.arena-midrange",
+  "name": "Arena Midrange",
+  "category": "Hard Rock",
+  "description": "Midrange-heavy arena rhythm.",
+  "author": "Pedal Faster",
+  "tags": [
+    "hard-rock",
+    "mids",
+    "arena"
+  ],
+  "gainLevel": 5,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "british_crunch",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.7,
+      "bass": 0.5,
+      "mid": 0.7,
+      "treble": 0.55,
+      "presence": 0.5,
+      "master": 0.6,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "closed_4x12",
+    "enabled": true,
+    "mic": 0.35,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "mid_overdrive",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "drive": 0.3,
+        "tone": 0.55,
+        "mid": 0.7,
+        "level": 0.6
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "hall_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.08,
+      "parameters": {
+        "size": 0.5,
+        "decay": 1.8,
+        "diffusion": 0.7,
+        "damping": 0.4,
+        "predelayMs": 20.0,
+        "modulation": 0.4,
+        "shimmer": 0.0,
+        "lowCutHz": 100.0
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -5.39
+}

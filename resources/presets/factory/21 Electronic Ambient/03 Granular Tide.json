@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.electronic-ambient.granular-tide",
+  "name": "Granular Tide",
+  "category": "Electronic Ambient",
+  "description": "Granular pitch-shifted tide of echoes.",
+  "author": "Pedal Faster",
+  "tags": [
+    "electronic",
+    "ambient",
+    "granular"
+  ],
+  "gainLevel": 0,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "studio_clean",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.2,
+      "bass": 0.45,
+      "mid": 0.5,
+      "treble": 0.5,
+      "presence": 0.45,
+      "master": 0.45,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "direct",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 50.0,
+    "highCutHz": 11000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "pitch_shifter",
+      "position": "pre",
+      "enabled": true,
+      "mix": 0.3,
+      "parameters": {
+        "semitones": -12.0,
+        "cents": 7.0,
+        "grainMs": 90.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "tape_delay",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.35,
+      "parameters": {
+        "timeMs": 750.0,
+        "sync": 0.0,
+        "feedback": 0.55,
+        "saturation": 0.4,
+        "wow": 0.7,
+        "flutter": 0.3,
+        "tone": 0.4
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "hall_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.4,
+      "parameters": {
+        "size": 0.9,
+        "decay": 9.0,
+        "diffusion": 0.7,
+        "damping": 0.4,
+        "predelayMs": 20.0,
+        "modulation": 0.4,
+        "shimmer": 0.0,
+        "lowCutHz": 100.0
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": 6.67
+}

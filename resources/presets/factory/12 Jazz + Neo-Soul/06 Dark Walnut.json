@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.jazz.dark-walnut",
+  "name": "Dark Walnut",
+  "category": "Jazz & Neo-Soul",
+  "description": "Dark, woody tone with a touch of tube grit.",
+  "author": "Pedal Faster",
+  "tags": [
+    "jazz",
+    "dark",
+    "grit"
+  ],
+  "gainLevel": 2,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "class_a_chime",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.3,
+      "bass": 0.6,
+      "mid": 0.5,
+      "treble": 0.3,
+      "presence": 0.3,
+      "master": 0.45,
+      "sag": 0.4,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.7,
+    "lowCutHz": 70.0,
+    "highCutHz": 5000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "plate_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.1,
+      "parameters": {
+        "decay": 1.2,
+        "predelayMs": 10.0,
+        "damping": 0.7,
+        "lowCutHz": 120.0,
+        "modulation": 0.5
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -2.23
+}

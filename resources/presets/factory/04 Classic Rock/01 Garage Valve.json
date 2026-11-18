@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.classic-rock.garage-valve",
+  "name": "Garage Valve",
+  "category": "Classic Rock",
+  "description": "Raw cranked crunch straight into a 4x12.",
+  "author": "Pedal Faster",
+  "tags": [
+    "rock",
+    "crunch",
+    "raw"
+  ],
+  "gainLevel": 4,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "british_crunch",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.55,
+      "bass": 0.5,
+      "mid": 0.6,
+      "treble": 0.55,
+      "presence": 0.5,
+      "master": 0.6,
+      "sag": 0.5,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "closed_4x12",
+    "enabled": true,
+    "mic": 0.35,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -3.12
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.utility.reamp-neutral",
+  "name": "Reamp Neutral",
+  "category": "Utility & Studio",
+  "description": "Neutral transparent path for reamping workflows.",
+  "author": "Pedal Faster",
+  "tags": [
+    "utility",
+    "reamp",
+    "neutral"
+  ],
+  "gainLevel": 0,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "studio_clean",
+    "enabled": false,
+    "parameters": {
+      "gain": 0.4,
+      "bass": 0.5,
+      "mid": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "master": 0.5,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "direct",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 20.0,
+    "highCutHz": 20000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": 7.37
+}

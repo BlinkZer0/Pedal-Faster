@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.synthwave.outrun-lead",
+  "name": "Outrun Lead",
+  "category": "Synthwave",
+  "description": "Flanged outrun lead with dotted echoes.",
+  "author": "Pedal Faster",
+  "tags": [
+    "electronic",
+    "synthwave",
+    "outrun",
+    "lead"
+  ],
+  "gainLevel": 7,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "hot_rod_lead",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.55,
+      "bass": 0.5,
+      "mid": 0.6,
+      "treble": 0.6,
+      "presence": 0.6,
+      "master": 0.5,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "closed_4x12",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "noise_gate",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "thresholdDb": -56.0,
+        "attackMs": 1.0,
+        "holdMs": 40.0,
+        "releaseMs": 120.0,
+        "hysteresisDb": 6.0,
+        "rangeDb": -80.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "mid_overdrive",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "drive": 0.55,
+        "tone": 0.6,
+        "mid": 0.6,
+        "level": 0.55
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "flanger",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.3,
+      "parameters": {
+        "rateHz": 0.2,
+        "depth": 0.6,
+        "feedback": 0.5,
+        "delayMs": 2.5,
+        "stereo": 0.5
+      }
+    },
+    {
+      "slotId": "slot-4",
+      "type": "digital_delay",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.25,
+      "parameters": {
+        "timeMs": 400.0,
+        "sync": 8.0,
+        "feedback": 0.4,
+        "stereo": 2.0,
+        "spread": 0.5,
+        "lowCutHz": 80.0,
+        "highCutHz": 9000.0
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "tempoBpm": 118.0,
+  "outputGainDb": -2.93
+}

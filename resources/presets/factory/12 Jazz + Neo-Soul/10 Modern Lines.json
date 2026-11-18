@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.jazz.modern-lines",
+  "name": "Modern Lines",
+  "category": "Jazz & Neo-Soul",
+  "description": "Modern fusion lead: smooth drive, delay and plate.",
+  "author": "Pedal Faster",
+  "tags": [
+    "jazz",
+    "fusion",
+    "lead",
+    "smooth"
+  ],
+  "gainLevel": 2,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "studio_clean",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.35,
+      "bass": 0.5,
+      "mid": 0.55,
+      "treble": 0.45,
+      "presence": 0.45,
+      "master": 0.45,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.45,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "compressor",
+      "position": "pre",
+      "enabled": true,
+      "mix": 1.0,
+      "parameters": {
+        "thresholdDb": -24.0,
+        "ratio": 3.0,
+        "attackMs": 10.0,
+        "releaseMs": 150.0,
+        "makeupDb": 4.0,
+        "kneeDb": 6.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "transparent_od",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "drive": 0.35,
+        "bass": 0.5,
+        "treble": 0.45,
+        "level": 0.55
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "digital_delay",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.16,
+      "parameters": {
+        "timeMs": 360.0,
+        "sync": 0.0,
+        "feedback": 0.25,
+        "stereo": 1.0,
+        "spread": 0.5,
+        "lowCutHz": 80.0,
+        "highCutHz": 5000.0
+      }
+    },
+    {
+      "slotId": "slot-4",
+      "type": "plate_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.14,
+      "parameters": {
+        "decay": 1.8,
+        "predelayMs": 10.0,
+        "damping": 0.4,
+        "lowCutHz": 120.0,
+        "modulation": 0.5
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -9.32
+}

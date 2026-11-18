@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.indie.angular-room",
+  "name": "Angular Room",
+  "category": "Alternative & Indie",
+  "description": "Spiky, bright crunch in a small room.",
+  "author": "Pedal Faster",
+  "tags": [
+    "indie",
+    "angular",
+    "crunch",
+    "bright"
+  ],
+  "gainLevel": 4,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "class_a_chime",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.4,
+      "bass": 0.4,
+      "mid": 0.5,
+      "treble": 0.65,
+      "presence": 0.6,
+      "master": 0.45,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_1x12",
+    "enabled": true,
+    "mic": 0.25,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "hard_distortion",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "gain": 0.3,
+        "tone": 0.7,
+        "bias": 0.0,
+        "level": 0.5
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "plate_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.14,
+      "parameters": {
+        "decay": 0.8,
+        "predelayMs": 10.0,
+        "damping": 0.4,
+        "lowCutHz": 120.0,
+        "modulation": 0.5
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -8.16
+}

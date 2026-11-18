@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.punk.buzzcut",
+  "name": "Buzzcut",
+  "category": "Punk & Garage",
+  "description": "Buzzy fuzz into a bright small amp.",
+  "author": "Pedal Faster",
+  "tags": [
+    "punk",
+    "fuzz",
+    "buzzy"
+  ],
+  "gainLevel": 6,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "class_a_chime",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.45,
+      "bass": 0.45,
+      "mid": 0.55,
+      "treble": 0.6,
+      "presence": 0.55,
+      "master": 0.5,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_1x12",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "fuzz",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "sustain": 0.55,
+        "tone": 0.65,
+        "bias": 0.5,
+        "level": 0.5
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -8.91
+}

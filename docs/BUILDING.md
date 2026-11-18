@@ -1,0 +1,89 @@
+# Building Pedal Faster
+
+## Requirements
+
+- Windows 10/11 x64
+- Visual Studio 2022 or newer with the **Desktop development with C++** workload. Visual Studio 2026 (v18) is what was used here; its bundled CMake 3.22+ is found automatically.
+- Git, to fetch JUCE
+- Internet access for the first build only: JUCE 9.0.5 is cloned into `%LOCALAPPDATA%\PedalFaster\deps\juce-src`
+
+No Python, Node.js or other runtimes are needed to build or run.
+
+## One-step build
+
+```bat
+build.bat            :: Release
+build.bat Debug
+```
+
+or in PowerShell:
+
+```powershell
+./scripts/build-windows.ps1 -Config Release
+```
+
+Either way this:
+1. Clones JUCE `9.0.5` if it isn't there yet. Use `-DPF_JUCE_DIR=<path>` to point at an existing checkout.
+2. Configures CMake into `%LOCALAPPDATA%\PedalFaster\build` (Visual Studio generator, x64).
+3. Builds `PedalFaster_VST3`, `PedalFaster_Standalone` and `PedalFasterTests`.
+
+### Manual CMake
+
+```powershell
+cmake -S . -B $env:LOCALAPPDATA\PedalFaster\build -DPF_JUCE_DIR=$env:LOCALAPPDATA\PedalFaster\deps\juce-src
+cmake --build $env:LOCALAPPDATA\PedalFaster\build --config Release --target PedalFaster_VST3 PedalFaster_Standalone PedalFasterTests --parallel
+```
+
+Without `PF_JUCE_DIR`, CMake fetches JUCE itself with FetchContent (tag `PF_JUCE_TAG`, default `9.0.5`).
+
+## Outputs
+
+| Artifact | Path |
+|---|---|
+| VST3 bundle (a folder, not a single DLL) | `%LOCALAPPDATA%\PedalFaster\build\PedalFaster_artefacts\Release\VST3\Pedal Faster.vst3\` |
+| Standalone app | `%LOCALAPPDATA%\PedalFaster\build\PedalFaster_artefacts\Release\Standalone\Pedal Faster.exe` |
+| Test runner | `%LOCALAPPDATA%\PedalFaster\build\PedalFasterTests_artefacts\Release\PedalFasterTests.exe` |
+
+The bundle contains `Contents\x86_64-win\Pedal Faster.vst3` (the binary) and `Contents\Resources\moduleinfo.json`. The factory presets are compiled into the binary, so no extra resource files are needed at runtime.
+
+## Install
+
+```bat
+install.bat
+```
+
+This asks for administrator rights, then copies the whole bundle to `C:\Program Files\Common Files\VST3\Pedal Faster.vst3` and the standalone app to `C:\Program Files\Pedal Faster\`, and adds a Start Menu shortcut. Close your DAW first, then rescan plugins. To install manually, copy the `Pedal Faster.vst3` **folder** into `C:\Program Files\Common Files\VST3\`.
+
+## Test and validate
+
+```powershell
+./scripts/test-windows.ps1                    # all tests, from the repo root
+./scripts/test-windows.ps1 -Category DSP      # DSP | Presets | Integration
+./scripts/validate-windows.ps1 -BuildSteinbergValidator
+```
+
+The validate script downloads pluginval into `%LOCALAPPDATA%\PedalFaster\tools` and optionally clones and builds the Steinberg VST3 SDK validator there.
+
+## Package a release
+
+```powershell
+./scripts/package-windows.ps1
+```
+
+This creates `dist\PedalFaster-1.0.0-win64.zip`, containing the VST3 bundle, `Pedal Faster.exe`, `install.bat`, `uninstall.bat`, `README.txt`, `USER_MANUAL.md`, `LICENSES.md` and the factory presets as JSON. `install.bat` detects the package layout and installs from the files next to it. End users don't need any development tools.
+
+## Developer tools in the test runner
+
+| Command | What it does |
+|---|---|
+| `PedalFasterTests --calibrate src/presets/FactoryCalibration.inc` | Renders every factory preset with the reference DI performance and writes per-preset output trims (target −20 dBFS RMS). Rebuild afterwards. |
+| `PedalFasterTests --export-factory resources/presets/factory` | Writes all factory presets as JSON (one file per preset, folder per bank) |
+| `PedalFasterTests --screenshot docs/screenshot.png` | Renders the editor to a PNG |
+
+When you change DSP or presets, run `--calibrate`, rebuild, then `scripts/test-windows.ps1 -UpdateBaseline` to re-record the acoustic regression baseline in `tests/regression/baseline.json`. Commit both files.
+
+## Troubleshooting
+
+- **`'C:\...\Pedal' is not recognized`:** the repo folder name contains `=`, which trips some ways of calling `cmd /c "<full path>"`. Double-clicking, or running `build.bat` from a console opened in the folder, works.
+- **CMake not found:** install the C++ workload, or put `cmake` on `PATH`.
+- **The DAW doesn't see the plugin:** make sure the whole `Pedal Faster.vst3` folder is in `C:\Program Files\Common Files\VST3\`, then rescan.

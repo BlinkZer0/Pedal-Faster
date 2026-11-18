@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.bass.arena-low",
+  "name": "Arena Low",
+  "category": "Bass & Extended Range",
+  "description": "Arena-sized driven bass with a little room.",
+  "author": "Pedal Faster",
+  "tags": [
+    "bass",
+    "arena",
+    "drive"
+  ],
+  "gainLevel": 1,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "bass_di",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.4,
+      "bass": 0.6,
+      "mid": 0.55,
+      "treble": 0.55,
+      "presence": 0.5,
+      "master": 0.5,
+      "sag": 0.4,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "bass_4x10",
+    "enabled": true,
+    "mic": 0.35,
+    "lowCutHz": 30.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "compressor",
+      "position": "pre",
+      "enabled": true,
+      "mix": 1.0,
+      "parameters": {
+        "thresholdDb": -22.0,
+        "ratio": 4.0,
+        "attackMs": 10.0,
+        "releaseMs": 150.0,
+        "makeupDb": 4.0,
+        "kneeDb": 6.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "plate_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.08,
+      "parameters": {
+        "decay": 1.0,
+        "predelayMs": 10.0,
+        "damping": 0.4,
+        "lowCutHz": 300.0,
+        "modulation": 0.5
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -6.07
+}

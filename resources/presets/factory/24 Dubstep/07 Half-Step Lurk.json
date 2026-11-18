@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.dubstep.half-step-lurk",
+  "name": "Half-Step Lurk",
+  "category": "Dubstep",
+  "description": "Lurking half-step bass with dark phaser.",
+  "author": "Pedal Faster",
+  "tags": [
+    "electronic",
+    "dubstep",
+    "half-step",
+    "dark"
+  ],
+  "gainLevel": 4,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "bass_di",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.45,
+      "bass": 0.65,
+      "mid": 0.45,
+      "treble": 0.4,
+      "presence": 0.4,
+      "master": 0.5,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "bass_4x10",
+    "enabled": true,
+    "mic": 0.6,
+    "lowCutHz": 30.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "octaver",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "sub1": 0.5,
+        "sub2": 0.0,
+        "up": 0.0,
+        "direct": 0.7,
+        "tracking": 0.5
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "hard_distortion",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "gain": 0.5,
+        "tone": 0.35,
+        "bias": 0.0,
+        "level": 0.45
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "phaser",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.45,
+      "parameters": {
+        "rateHz": 0.1,
+        "depth": 0.8,
+        "feedback": 0.5,
+        "stages": 3.0,
+        "centre": 0.5,
+        "stereo": 0.5
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "tempoBpm": 140.0,
+  "outputGainDb": -7.58
+}

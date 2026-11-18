@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.punk.basement-fire",
+  "name": "Basement Fire",
+  "category": "Punk & Garage",
+  "description": "Dirty basement-show amp on the edge of falling apart.",
+  "author": "Pedal Faster",
+  "tags": [
+    "punk",
+    "garage",
+    "raw"
+  ],
+  "gainLevel": 5,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "british_crunch",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.75,
+      "bass": 0.55,
+      "mid": 0.5,
+      "treble": 0.6,
+      "presence": 0.55,
+      "master": 0.7,
+      "sag": 0.6,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.35,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -1.49
+}

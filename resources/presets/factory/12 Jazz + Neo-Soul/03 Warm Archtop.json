@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.jazz.warm-archtop",
+  "name": "Warm Archtop",
+  "category": "Jazz & Neo-Soul",
+  "description": "Round archtop voice, treble rolled off.",
+  "author": "Pedal Faster",
+  "tags": [
+    "jazz",
+    "archtop",
+    "dark"
+  ],
+  "gainLevel": 0,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "studio_clean",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.18,
+      "bass": 0.6,
+      "mid": 0.5,
+      "treble": 0.3,
+      "presence": 0.3,
+      "master": 0.45,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.7,
+    "lowCutHz": 70.0,
+    "highCutHz": 5500.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "parametric_eq",
+      "position": "post",
+      "enabled": true,
+      "parameters": {
+        "lowFreq": 120.0,
+        "lowGain": 1.0,
+        "lowQ": 0.7,
+        "midFreq": 700.0,
+        "midGain": 1.5,
+        "midQ": 1.0,
+        "highFreq": 3500.0,
+        "highGain": -3.0,
+        "highQ": 0.7,
+        "outputDb": 0.0
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": 0.66
+}

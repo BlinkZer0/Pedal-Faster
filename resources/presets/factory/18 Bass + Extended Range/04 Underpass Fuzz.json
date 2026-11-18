@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.bass.underpass-fuzz",
+  "name": "Underpass Fuzz",
+  "category": "Bass & Extended Range",
+  "description": "Fuzz bass that keeps the low end intact.",
+  "author": "Pedal Faster",
+  "tags": [
+    "bass",
+    "fuzz"
+  ],
+  "gainLevel": 5,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "bass_di",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.3,
+      "bass": 0.6,
+      "mid": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "master": 0.5,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "bass_4x10",
+    "enabled": true,
+    "mic": 0.4,
+    "lowCutHz": 30.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "fuzz",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "sustain": 0.5,
+        "tone": 0.45,
+        "bias": 0.5,
+        "level": 0.5
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -7.35
+}

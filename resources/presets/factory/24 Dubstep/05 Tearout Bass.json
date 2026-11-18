@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.dubstep.tearout-bass",
+  "name": "Tearout Bass",
+  "category": "Dubstep",
+  "description": "Tearout: octave fuzz, resonant filter and flanger.",
+  "author": "Pedal Faster",
+  "tags": [
+    "electronic",
+    "dubstep",
+    "tearout",
+    "aggressive"
+  ],
+  "gainLevel": 9,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "modern_metal",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.5,
+      "bass": 0.6,
+      "mid": 0.5,
+      "treble": 0.55,
+      "presence": 0.55,
+      "master": 0.5,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "closed_4x12",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 60.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "noise_gate",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "thresholdDb": -50.0,
+        "attackMs": 1.0,
+        "holdMs": 40.0,
+        "releaseMs": 120.0,
+        "hysteresisDb": 6.0,
+        "rangeDb": -80.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "octave_fuzz",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "drive": 0.8,
+        "octave": 0.5,
+        "tone": 0.6,
+        "level": 0.45
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "auto_wah",
+      "position": "pre",
+      "enabled": true,
+      "mix": 1.0,
+      "parameters": {
+        "rateHz": 1.5,
+        "sync": 10.0,
+        "depth": 0.9,
+        "resonance": 0.85,
+        "sensitivity": 0.2,
+        "centre": 0.5,
+        "mode": 2.0
+      }
+    },
+    {
+      "slotId": "slot-4",
+      "type": "flanger",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.4,
+      "parameters": {
+        "rateHz": 0.5,
+        "depth": 0.6,
+        "feedback": 0.75,
+        "delayMs": 1.0,
+        "stereo": 0.5
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "tempoBpm": 140.0,
+  "outputGainDb": -2.91
+}

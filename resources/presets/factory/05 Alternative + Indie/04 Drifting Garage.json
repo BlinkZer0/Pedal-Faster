@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.indie.drifting-garage",
+  "name": "Drifting Garage",
+  "category": "Alternative & Indie",
+  "description": "Garage crunch drifting through a slow phaser.",
+  "author": "Pedal Faster",
+  "tags": [
+    "indie",
+    "phaser",
+    "garage"
+  ],
+  "gainLevel": 4,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "british_crunch",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.4,
+      "bass": 0.5,
+      "mid": 0.55,
+      "treble": 0.55,
+      "presence": 0.5,
+      "master": 0.5,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.4,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "mid_overdrive",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "drive": 0.4,
+        "tone": 0.55,
+        "mid": 0.5,
+        "level": 0.55
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "phaser",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.5,
+      "parameters": {
+        "rateHz": 0.2,
+        "depth": 0.8,
+        "feedback": 0.45,
+        "stages": 2.0,
+        "centre": 0.5,
+        "stereo": 0.5
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "plate_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.14,
+      "parameters": {
+        "decay": 1.4,
+        "predelayMs": 10.0,
+        "damping": 0.4,
+        "lowCutHz": 120.0,
+        "modulation": 0.5
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -1.54
+}

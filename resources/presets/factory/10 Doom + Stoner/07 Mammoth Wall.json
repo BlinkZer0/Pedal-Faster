@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.doom.mammoth-wall",
+  "name": "Mammoth Wall",
+  "category": "Doom & Stoner",
+  "description": "Two stacked distortions: a mammoth wall.",
+  "author": "Pedal Faster",
+  "tags": [
+    "doom",
+    "wall",
+    "heavy",
+    "fuzz"
+  ],
+  "gainLevel": 9,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "modern_metal",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.4,
+      "bass": 0.65,
+      "mid": 0.45,
+      "treble": 0.45,
+      "presence": 0.45,
+      "master": 0.55,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "closed_4x12",
+    "enabled": true,
+    "mic": 0.5,
+    "lowCutHz": 70.0,
+    "highCutHz": 6500.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "noise_gate",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "thresholdDb": -50.0,
+        "attackMs": 1.0,
+        "holdMs": 40.0,
+        "releaseMs": 120.0,
+        "hysteresisDb": 6.0,
+        "rangeDb": -80.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "fuzz",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "sustain": 0.6,
+        "tone": 0.4,
+        "bias": 0.5,
+        "level": 0.45
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "high_gain_distortion",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "gain": 0.3,
+        "bass": 0.6,
+        "middle": 0.45,
+        "treble": 0.45,
+        "presence": 0.45,
+        "level": 0.45
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -4.7
+}

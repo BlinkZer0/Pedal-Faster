@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.hardstyle.reverse-bass-lead",
+  "name": "Reverse Bass Lead",
+  "category": "Hardstyle",
+  "description": "Distorted, gated lead that pumps on the off-beat like a reverse bass.",
+  "author": "Pedal Faster",
+  "tags": [
+    "electronic",
+    "hardstyle",
+    "gated",
+    "lead"
+  ],
+  "gainLevel": 10,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": true,
+    "thresholdDb": -55.0,
+    "releaseMs": 40.0
+  },
+  "amp": {
+    "type": "modern_metal",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.6,
+      "bass": 0.55,
+      "mid": 0.45,
+      "treble": 0.6,
+      "presence": 0.6,
+      "master": 0.5,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "closed_4x12",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 90.0,
+    "highCutHz": 8000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "noise_gate",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "thresholdDb": -50.0,
+        "attackMs": 1.0,
+        "holdMs": 40.0,
+        "releaseMs": 40.0,
+        "hysteresisDb": 6.0,
+        "rangeDb": -80.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "high_gain_distortion",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "gain": 0.75,
+        "bass": 0.6,
+        "middle": 0.45,
+        "treble": 0.55,
+        "presence": 0.6,
+        "level": 0.45
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "tremolo",
+      "position": "post",
+      "enabled": true,
+      "parameters": {
+        "rateHz": 5.0,
+        "sync": 7.0,
+        "depth": 1.0,
+        "waveform": 3.0,
+        "stereo": 0.0
+      }
+    },
+    {
+      "slotId": "slot-4",
+      "type": "plate_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.12,
+      "parameters": {
+        "decay": 1.2,
+        "predelayMs": 10.0,
+        "damping": 0.4,
+        "lowCutHz": 120.0,
+        "modulation": 0.5
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "tempoBpm": 150.0,
+  "outputGainDb": 0.61
+}

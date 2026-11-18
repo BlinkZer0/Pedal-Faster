@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.synthwave.midnight-arcade",
+  "name": "Midnight Arcade",
+  "category": "Synthwave",
+  "description": "Eighties arcade clean with chorus and echo.",
+  "author": "Pedal Faster",
+  "tags": [
+    "electronic",
+    "synthwave",
+    "80s",
+    "clean"
+  ],
+  "gainLevel": 0,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "studio_clean",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.22,
+      "bass": 0.45,
+      "mid": 0.5,
+      "treble": 0.65,
+      "presence": 0.6,
+      "master": 0.45,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.25,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "compressor",
+      "position": "pre",
+      "enabled": true,
+      "mix": 1.0,
+      "parameters": {
+        "thresholdDb": -24.0,
+        "ratio": 4.0,
+        "attackMs": 10.0,
+        "releaseMs": 150.0,
+        "makeupDb": 4.0,
+        "kneeDb": 6.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "chorus",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.5,
+      "parameters": {
+        "rateHz": 0.9,
+        "depth": 0.6,
+        "voices": 2.0,
+        "width": 1.0,
+        "delayMs": 12.0,
+        "tone": 0.8
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "digital_delay",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.25,
+      "parameters": {
+        "timeMs": 400.0,
+        "sync": 8.0,
+        "feedback": 0.35,
+        "stereo": 2.0,
+        "spread": 0.5,
+        "lowCutHz": 80.0,
+        "highCutHz": 9000.0
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "tempoBpm": 110.0,
+  "outputGainDb": 1.71
+}

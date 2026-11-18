@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.hardstyle.raw-pulse",
+  "name": "Raw Pulse",
+  "category": "Hardstyle",
+  "description": "Pulsing raw distortion locked to the beat.",
+  "author": "Pedal Faster",
+  "tags": [
+    "electronic",
+    "hardstyle",
+    "rawstyle",
+    "pulse"
+  ],
+  "gainLevel": 9,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": true,
+    "thresholdDb": -55.0,
+    "releaseMs": 30.0
+  },
+  "amp": {
+    "type": "modern_metal",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.5,
+      "bass": 0.55,
+      "mid": 0.45,
+      "treble": 0.6,
+      "presence": 0.6,
+      "master": 0.5,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "closed_4x12",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 100.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "noise_gate",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "thresholdDb": -50.0,
+        "attackMs": 1.0,
+        "holdMs": 40.0,
+        "releaseMs": 120.0,
+        "hysteresisDb": 6.0,
+        "rangeDb": -80.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "high_gain_distortion",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "gain": 0.85,
+        "bass": 0.6,
+        "middle": 0.4,
+        "treble": 0.6,
+        "presence": 0.6,
+        "level": 0.4
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "tremolo",
+      "position": "post",
+      "enabled": true,
+      "parameters": {
+        "rateHz": 5.0,
+        "sync": 10.0,
+        "depth": 0.8,
+        "waveform": 3.0,
+        "stereo": 0.0
+      }
+    },
+    {
+      "slotId": "slot-4",
+      "type": "digital_delay",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.15,
+      "parameters": {
+        "timeMs": 400.0,
+        "sync": 7.0,
+        "feedback": 0.2,
+        "stereo": 2.0,
+        "spread": 0.5,
+        "lowCutHz": 80.0,
+        "highCutHz": 9000.0
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "tempoBpm": 155.0,
+  "outputGainDb": 0.09
+}

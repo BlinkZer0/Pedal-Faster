@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.chime.twelve-string-dream",
+  "name": "Twelve String Dream",
+  "category": "Sparkle & Chime",
+  "description": "Octave-doubled jangle that suggests a twelve-string.",
+  "author": "Pedal Faster",
+  "tags": [
+    "chime",
+    "12-string",
+    "jangle",
+    "pitch"
+  ],
+  "gainLevel": 2,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "class_a_chime",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.28,
+      "bass": 0.4,
+      "mid": 0.5,
+      "treble": 0.62,
+      "presence": 0.55,
+      "master": 0.4,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "compressor",
+      "position": "pre",
+      "enabled": true,
+      "mix": 1.0,
+      "parameters": {
+        "thresholdDb": -26.0,
+        "ratio": 4.0,
+        "attackMs": 5.0,
+        "releaseMs": 150.0,
+        "makeupDb": 5.0,
+        "kneeDb": 6.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "pitch_shifter",
+      "position": "pre",
+      "enabled": true,
+      "mix": 0.28,
+      "parameters": {
+        "semitones": 12.0,
+        "cents": 4.0,
+        "grainMs": 30.0
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "chorus",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.3,
+      "parameters": {
+        "rateHz": 1.2,
+        "depth": 0.15,
+        "voices": 0.0,
+        "width": 0.7,
+        "delayMs": 12.0,
+        "tone": 0.8
+      }
+    },
+    {
+      "slotId": "slot-4",
+      "type": "plate_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.14,
+      "parameters": {
+        "decay": 1.5,
+        "predelayMs": 10.0,
+        "damping": 0.4,
+        "lowCutHz": 120.0,
+        "modulation": 0.5
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -0.89
+}

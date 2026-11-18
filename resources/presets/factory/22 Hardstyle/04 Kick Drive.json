@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.hardstyle.kick-drive",
+  "name": "Kick Drive",
+  "category": "Hardstyle",
+  "description": "Punchy, saturated 'kick' style low chug.",
+  "author": "Pedal Faster",
+  "tags": [
+    "electronic",
+    "hardstyle",
+    "kick",
+    "punch"
+  ],
+  "gainLevel": 8,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": true,
+    "thresholdDb": -55.0,
+    "releaseMs": 30.0
+  },
+  "amp": {
+    "type": "modern_metal",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.7,
+      "bass": 0.65,
+      "mid": 0.4,
+      "treble": 0.5,
+      "presence": 0.55,
+      "master": 0.5,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "closed_4x12",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 60.0,
+    "highCutHz": 7000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "noise_gate",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "thresholdDb": -48.0,
+        "attackMs": 1.0,
+        "holdMs": 40.0,
+        "releaseMs": 30.0,
+        "hysteresisDb": 6.0,
+        "rangeDb": -80.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "compressor",
+      "position": "pre",
+      "enabled": true,
+      "mix": 1.0,
+      "parameters": {
+        "thresholdDb": -24.0,
+        "ratio": 8.0,
+        "attackMs": 0.5,
+        "releaseMs": 60.0,
+        "makeupDb": 4.0,
+        "kneeDb": 6.0
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "octaver",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "sub1": 0.5,
+        "sub2": 0.0,
+        "up": 0.0,
+        "direct": 0.9,
+        "tracking": 0.7
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "tempoBpm": 150.0,
+  "outputGainDb": -4.53
+}

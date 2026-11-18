@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.electronic-ambient.glacier-bloom",
+  "name": "Glacier Bloom",
+  "category": "Electronic Ambient",
+  "description": "Slow bloom with shimmer like a glacier calving.",
+  "author": "Pedal Faster",
+  "tags": [
+    "electronic",
+    "ambient",
+    "shimmer",
+    "bloom"
+  ],
+  "gainLevel": 2,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "class_a_chime",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.22,
+      "bass": 0.45,
+      "mid": 0.5,
+      "treble": 0.55,
+      "presence": 0.5,
+      "master": 0.4,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.4,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "hall_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.5,
+      "parameters": {
+        "size": 1.0,
+        "decay": 14.0,
+        "diffusion": 0.7,
+        "damping": 0.4,
+        "predelayMs": 80.0,
+        "modulation": 0.4,
+        "shimmer": 0.7,
+        "lowCutHz": 100.0
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -0.27
+}

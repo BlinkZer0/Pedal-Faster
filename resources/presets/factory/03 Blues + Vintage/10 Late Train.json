@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.blues.late-train",
+  "name": "Late Train",
+  "category": "Blues & Vintage",
+  "description": "Low-sustain vintage fuzz, tape echo and spring.",
+  "author": "Pedal Faster",
+  "tags": [
+    "blues",
+    "fuzz",
+    "vintage",
+    "tape"
+  ],
+  "gainLevel": 5,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "studio_clean",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.3,
+      "bass": 0.5,
+      "mid": 0.55,
+      "treble": 0.5,
+      "presence": 0.45,
+      "master": 0.5,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_1x12",
+    "enabled": true,
+    "mic": 0.4,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "fuzz",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "sustain": 0.35,
+        "tone": 0.45,
+        "bias": 0.6,
+        "level": 0.5
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "tape_delay",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.18,
+      "parameters": {
+        "timeMs": 320.0,
+        "sync": 0.0,
+        "feedback": 0.25,
+        "saturation": 0.4,
+        "wow": 0.4,
+        "flutter": 0.3,
+        "tone": 0.5
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "spring_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.16,
+      "parameters": {
+        "decay": 2.0,
+        "tone": 0.5,
+        "character": 0.5,
+        "dwell": 0.3
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -7.13
+}

@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.synthwave.vhs-memories",
+  "name": "VHS Memories",
+  "category": "Synthwave",
+  "description": "Warbly VHS-tape nostalgia.",
+  "author": "Pedal Faster",
+  "tags": [
+    "electronic",
+    "synthwave",
+    "lo-fi",
+    "tape"
+  ],
+  "gainLevel": 2,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "class_a_chime",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.28,
+      "bass": 0.5,
+      "mid": 0.5,
+      "treble": 0.5,
+      "presence": 0.45,
+      "master": 0.45,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.5,
+    "lowCutHz": 70.0,
+    "highCutHz": 6500.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "chorus",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.4,
+      "parameters": {
+        "rateHz": 0.3,
+        "depth": 0.7,
+        "voices": 1.0,
+        "width": 0.7,
+        "delayMs": 12.0,
+        "tone": 0.8
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "tape_delay",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.3,
+      "parameters": {
+        "timeMs": 380.0,
+        "sync": 0.0,
+        "feedback": 0.4,
+        "saturation": 0.4,
+        "wow": 0.9,
+        "flutter": 0.6,
+        "tone": 0.35
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "plate_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.2,
+      "parameters": {
+        "decay": 2.5,
+        "predelayMs": 10.0,
+        "damping": 0.4,
+        "lowCutHz": 120.0,
+        "modulation": 0.5
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "tempoBpm": 95.0,
+  "outputGainDb": 3.36
+}

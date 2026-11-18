@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.psych.tape-melt",
+  "name": "Tape Melt",
+  "category": "Psychedelic & Experimental",
+  "description": "Melting, warbling tape echoes.",
+  "author": "Pedal Faster",
+  "tags": [
+    "experimental",
+    "tape",
+    "warble"
+  ],
+  "gainLevel": 2,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "class_a_chime",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.3,
+      "bass": 0.5,
+      "mid": 0.5,
+      "treble": 0.5,
+      "presence": 0.45,
+      "master": 0.45,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.45,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "vibrato",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.5,
+      "parameters": {
+        "rateHz": 1.2,
+        "depth": 0.4,
+        "shape": 0.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "tape_delay",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.35,
+      "parameters": {
+        "timeMs": 500.0,
+        "sync": 0.0,
+        "feedback": 0.65,
+        "saturation": 0.7,
+        "wow": 1.0,
+        "flutter": 0.7,
+        "tone": 0.3
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": 1.43
+}

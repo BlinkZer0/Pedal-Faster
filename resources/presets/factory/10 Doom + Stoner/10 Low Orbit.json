@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.doom.low-orbit",
+  "name": "Low Orbit",
+  "category": "Doom & Stoner",
+  "description": "Spacey stoner orbit: fuzz, flanger and tape.",
+  "author": "Pedal Faster",
+  "tags": [
+    "stoner",
+    "space",
+    "flanger",
+    "tape"
+  ],
+  "gainLevel": 7,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "british_crunch",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.45,
+      "bass": 0.6,
+      "mid": 0.5,
+      "treble": 0.5,
+      "presence": 0.45,
+      "master": 0.6,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "closed_4x12",
+    "enabled": true,
+    "mic": 0.5,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "fuzz",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "sustain": 0.6,
+        "tone": 0.5,
+        "bias": 0.5,
+        "level": 0.5
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "flanger",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.45,
+      "parameters": {
+        "rateHz": 0.1,
+        "depth": 0.8,
+        "feedback": 0.6,
+        "delayMs": 4.0,
+        "stereo": 0.5
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "tape_delay",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.22,
+      "parameters": {
+        "timeMs": 600.0,
+        "sync": 0.0,
+        "feedback": 0.45,
+        "saturation": 0.4,
+        "wow": 0.5,
+        "flutter": 0.3,
+        "tone": 0.5
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -1.87
+}

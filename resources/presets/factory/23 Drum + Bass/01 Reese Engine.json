@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.dnb.reese-engine",
+  "name": "Reese Engine",
+  "category": "Drum & Bass",
+  "description": "Detuned, chorused 'reese' bass from a guitar or bass.",
+  "author": "Pedal Faster",
+  "tags": [
+    "electronic",
+    "dnb",
+    "reese",
+    "bass"
+  ],
+  "gainLevel": 4,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "bass_di",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.45,
+      "bass": 0.6,
+      "mid": 0.5,
+      "treble": 0.45,
+      "presence": 0.45,
+      "master": 0.5,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "bass_4x10",
+    "enabled": true,
+    "mic": 0.4,
+    "lowCutHz": 30.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "octaver",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "sub1": 0.6,
+        "sub2": 0.0,
+        "up": 0.0,
+        "direct": 0.6,
+        "tracking": 0.7
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "hard_distortion",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "gain": 0.45,
+        "tone": 0.4,
+        "bias": 0.0,
+        "level": 0.5
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "chorus",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.55,
+      "parameters": {
+        "rateHz": 0.25,
+        "depth": 0.9,
+        "voices": 2.0,
+        "width": 1.0,
+        "delayMs": 15.0,
+        "tone": 0.8
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "tempoBpm": 174.0,
+  "outputGainDb": -6.8
+}

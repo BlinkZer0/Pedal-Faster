@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.indie.tape-flowers",
+  "name": "Tape Flowers",
+  "category": "Alternative & Indie",
+  "description": "Clean-ish indie tone blooming into warbly tape echo.",
+  "author": "Pedal Faster",
+  "tags": [
+    "indie",
+    "tape",
+    "clean"
+  ],
+  "gainLevel": 2,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "class_a_chime",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.35,
+      "bass": 0.45,
+      "mid": 0.5,
+      "treble": 0.6,
+      "presence": 0.5,
+      "master": 0.45,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.35,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "tape_delay",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.28,
+      "parameters": {
+        "timeMs": 360.0,
+        "sync": 0.0,
+        "feedback": 0.35,
+        "saturation": 0.4,
+        "wow": 0.5,
+        "flutter": 0.4,
+        "tone": 0.5
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "plate_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.14,
+      "parameters": {
+        "decay": 1.6,
+        "predelayMs": 10.0,
+        "damping": 0.4,
+        "lowCutHz": 120.0,
+        "modulation": 0.5
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -2.25
+}

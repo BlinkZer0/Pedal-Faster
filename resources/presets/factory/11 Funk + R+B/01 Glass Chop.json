@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.funk.glass-chop",
+  "name": "Glass Chop",
+  "category": "Funk & R&B",
+  "description": "Squeaky-clean, compressed rhythm chop.",
+  "author": "Pedal Faster",
+  "tags": [
+    "funk",
+    "clean",
+    "compressed",
+    "rhythm"
+  ],
+  "gainLevel": 0,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "studio_clean",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.2,
+      "bass": 0.4,
+      "mid": 0.5,
+      "treble": 0.7,
+      "presence": 0.6,
+      "master": 0.45,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.25,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "compressor",
+      "position": "pre",
+      "enabled": true,
+      "mix": 1.0,
+      "parameters": {
+        "thresholdDb": -28.0,
+        "ratio": 6.0,
+        "attackMs": 2.0,
+        "releaseMs": 80.0,
+        "makeupDb": 7.0,
+        "kneeDb": 6.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "parametric_eq",
+      "position": "post",
+      "enabled": true,
+      "parameters": {
+        "lowFreq": 150.0,
+        "lowGain": -3.0,
+        "lowQ": 0.7,
+        "midFreq": 1200.0,
+        "midGain": 2.0,
+        "midQ": 1.0,
+        "highFreq": 4000.0,
+        "highGain": 2.0,
+        "highQ": 0.7,
+        "outputDb": 0.0
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -5.65
+}

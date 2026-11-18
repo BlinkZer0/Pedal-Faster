@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.electronic-ambient.deep-field",
+  "name": "Deep Field",
+  "category": "Electronic Ambient",
+  "description": "Deep, dark field recording-style wash.",
+  "author": "Pedal Faster",
+  "tags": [
+    "electronic",
+    "ambient",
+    "dark"
+  ],
+  "gainLevel": 0,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "studio_clean",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.2,
+      "bass": 0.55,
+      "mid": 0.5,
+      "treble": 0.35,
+      "presence": 0.35,
+      "master": 0.45,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.7,
+    "lowCutHz": 70.0,
+    "highCutHz": 5500.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "phaser",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.4,
+      "parameters": {
+        "rateHz": 0.05,
+        "depth": 0.8,
+        "feedback": 0.4,
+        "stages": 3.0,
+        "centre": 0.5,
+        "stereo": 0.5
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "hall_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.55,
+      "parameters": {
+        "size": 1.0,
+        "decay": 15.0,
+        "diffusion": 0.7,
+        "damping": 0.75,
+        "predelayMs": 20.0,
+        "modulation": 0.4,
+        "shimmer": 0.0,
+        "lowCutHz": 150.0
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": 7.84
+}

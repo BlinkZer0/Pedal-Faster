@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.ambient.endless-bloom",
+  "name": "Endless Bloom",
+  "category": "Ambient & Shoegaze",
+  "description": "Swelling pad with near-infinite decay.",
+  "author": "Pedal Faster",
+  "tags": [
+    "ambient",
+    "pad",
+    "swell"
+  ],
+  "gainLevel": 0,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "studio_clean",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.2,
+      "bass": 0.45,
+      "mid": 0.5,
+      "treble": 0.5,
+      "presence": 0.45,
+      "master": 0.45,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.45,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "compressor",
+      "position": "pre",
+      "enabled": true,
+      "mix": 1.0,
+      "parameters": {
+        "thresholdDb": -26.0,
+        "ratio": 3.0,
+        "attackMs": 10.0,
+        "releaseMs": 150.0,
+        "makeupDb": 4.0,
+        "kneeDb": 6.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "hall_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.55,
+      "parameters": {
+        "size": 1.0,
+        "decay": 16.0,
+        "diffusion": 0.85,
+        "damping": 0.4,
+        "predelayMs": 20.0,
+        "modulation": 0.6,
+        "shimmer": 0.0,
+        "lowCutHz": 100.0
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": 0.64
+}

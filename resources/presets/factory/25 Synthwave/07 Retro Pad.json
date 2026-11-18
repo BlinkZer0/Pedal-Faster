@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.synthwave.retro-pad",
+  "name": "Retro Pad",
+  "category": "Synthwave",
+  "description": "Volume-swell style retro pad with heavy chorus.",
+  "author": "Pedal Faster",
+  "tags": [
+    "electronic",
+    "synthwave",
+    "pad"
+  ],
+  "gainLevel": 0,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "studio_clean",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.2,
+      "bass": 0.5,
+      "mid": 0.5,
+      "treble": 0.5,
+      "presence": 0.45,
+      "master": 0.45,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.45,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "compressor",
+      "position": "pre",
+      "enabled": true,
+      "mix": 1.0,
+      "parameters": {
+        "thresholdDb": -30.0,
+        "ratio": 6.0,
+        "attackMs": 40.0,
+        "releaseMs": 150.0,
+        "makeupDb": 7.0,
+        "kneeDb": 6.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "chorus",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.55,
+      "parameters": {
+        "rateHz": 0.3,
+        "depth": 0.8,
+        "voices": 3.0,
+        "width": 1.0,
+        "delayMs": 12.0,
+        "tone": 0.8
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "hall_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.45,
+      "parameters": {
+        "size": 0.95,
+        "decay": 8.0,
+        "diffusion": 0.7,
+        "damping": 0.4,
+        "predelayMs": 20.0,
+        "modulation": 0.4,
+        "shimmer": 0.0,
+        "lowCutHz": 100.0
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "tempoBpm": 100.0,
+  "outputGainDb": 4.44
+}

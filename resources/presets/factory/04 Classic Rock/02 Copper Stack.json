@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.classic-rock.copper-stack",
+  "name": "Copper Stack",
+  "category": "Classic Rock",
+  "description": "Mid-focused drive pushing a British stack.",
+  "author": "Pedal Faster",
+  "tags": [
+    "rock",
+    "crunch",
+    "stack",
+    "overdrive"
+  ],
+  "gainLevel": 5,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "british_crunch",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.5,
+      "bass": 0.5,
+      "mid": 0.6,
+      "treble": 0.55,
+      "presence": 0.55,
+      "master": 0.55,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "closed_4x12",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "mid_overdrive",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "drive": 0.3,
+        "tone": 0.55,
+        "mid": 0.5,
+        "level": 0.6
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "plate_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.1,
+      "parameters": {
+        "decay": 1.2,
+        "predelayMs": 10.0,
+        "damping": 0.4,
+        "lowCutHz": 120.0,
+        "modulation": 0.5
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -5.69
+}

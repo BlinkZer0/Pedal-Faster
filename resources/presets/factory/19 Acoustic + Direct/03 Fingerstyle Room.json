@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.acoustic.fingerstyle-room",
+  "name": "Fingerstyle Room",
+  "category": "Acoustic & Direct",
+  "description": "Fingerstyle detail with a small room.",
+  "author": "Pedal Faster",
+  "tags": [
+    "acoustic",
+    "fingerstyle",
+    "room"
+  ],
+  "gainLevel": 0,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "studio_clean",
+    "enabled": false,
+    "parameters": {
+      "gain": 0.4,
+      "bass": 0.5,
+      "mid": 0.5,
+      "treble": 0.5,
+      "presence": 0.5,
+      "master": 0.5,
+      "sag": 0.3,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "direct",
+    "enabled": true,
+    "mic": 0.3,
+    "lowCutHz": 60.0,
+    "highCutHz": 15000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "compressor",
+      "position": "pre",
+      "enabled": true,
+      "mix": 1.0,
+      "parameters": {
+        "thresholdDb": -26.0,
+        "ratio": 2.5,
+        "attackMs": 15.0,
+        "releaseMs": 150.0,
+        "makeupDb": 3.0,
+        "kneeDb": 6.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "graphic_eq",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "band100": -2.0,
+        "band200": -1.0,
+        "band400": -2.0,
+        "band800": 0.0,
+        "band1600": 0.0,
+        "band3200": 1.0,
+        "band6400": 2.0,
+        "outputDb": 0.0
+      }
+    },
+    {
+      "slotId": "slot-3",
+      "type": "hall_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.16,
+      "parameters": {
+        "size": 0.3,
+        "decay": 1.2,
+        "diffusion": 0.7,
+        "damping": 0.4,
+        "predelayMs": 8.0,
+        "modulation": 0.4,
+        "shimmer": 0.0,
+        "lowCutHz": 100.0
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": 7.87
+}

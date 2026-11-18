@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "factory.chime.copper-chime",
+  "name": "Copper Chime",
+  "category": "Sparkle & Chime",
+  "description": "Boosted into edge-of-breakup chime, spring reverb.",
+  "author": "Pedal Faster",
+  "tags": [
+    "chime",
+    "edge-of-breakup",
+    "boost",
+    "spring"
+  ],
+  "gainLevel": 3,
+  "inputGainDb": 0.0,
+  "gate": {
+    "enabled": false,
+    "thresholdDb": -60.0,
+    "releaseMs": 80.0
+  },
+  "amp": {
+    "type": "class_a_chime",
+    "enabled": true,
+    "parameters": {
+      "gain": 0.45,
+      "bass": 0.45,
+      "mid": 0.55,
+      "treble": 0.6,
+      "presence": 0.5,
+      "master": 0.5,
+      "sag": 0.4,
+      "trimDb": 0.0
+    }
+  },
+  "cabinet": {
+    "type": "open_2x12",
+    "enabled": true,
+    "mic": 0.35,
+    "lowCutHz": 70.0,
+    "highCutHz": 9000.0,
+    "levelDb": 0.0,
+    "mix": 1.0
+  },
+  "effects": [
+    {
+      "slotId": "slot-1",
+      "type": "clean_boost",
+      "position": "pre",
+      "enabled": true,
+      "parameters": {
+        "gainDb": 8.0,
+        "tone": 0.55,
+        "outputDb": 0.0
+      }
+    },
+    {
+      "slotId": "slot-2",
+      "type": "spring_reverb",
+      "position": "post",
+      "enabled": true,
+      "mix": 0.2,
+      "parameters": {
+        "decay": 2.0,
+        "tone": 0.55,
+        "character": 0.5,
+        "dwell": 0.3
+      }
+    }
+  ],
+  "masterEq": {
+    "enabled": true,
+    "lowDb": 0.0,
+    "midDb": 0.0,
+    "midFreqHz": 800.0,
+    "highDb": 0.0
+  },
+  "limiter": {
+    "enabled": true,
+    "ceilingDb": -0.5
+  },
+  "macros": [],
+  "outputGainDb": -6.55
+}
