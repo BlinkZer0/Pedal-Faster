@@ -31,7 +31,7 @@ Build outputs go to `%LOCALAPPDATA%\PedalFaster\build`, so OneDrive doesn't sync
 
 `install.bat` also installs the standalone app to `C:\Program Files\Pedal Faster` and adds a Start Menu shortcut. `uninstall.bat` removes them and keeps your presets.
 
-## Web preview (try it without installing)
+## Web preview [(try it without installing)]https://blinkzer0.github.io/Pedal-Faster/]
 
 `web/index.html` (also `docs/index.html`, ready for GitHub Pages) is **one self-contained HTML file** that runs the whole rig in the browser: all 250 presets, the 30 pedals, 6 amps and 5 cabinets, through a JavaScript AudioWorklet port of the C++ DSP. Open it in Chrome or Edge, or run `start-web.bat` to serve it on `http://localhost:8080`. Then pick a source:
 
