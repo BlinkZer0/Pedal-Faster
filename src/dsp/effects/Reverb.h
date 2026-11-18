@@ -181,7 +181,7 @@ public:
         for (auto& d : diff) d.reset();
         for (auto& f : damp) f.reset();
         for (auto& s : state) s = 0;
-        pre.reset(); shifter.reset(); shimHp.reset(); outHp.reset(); predelayMs.snap(); shimmer.snap(); sizeS.snap(); shimFb = 0;
+        pre.reset(); shifter.reset(); shimHp.reset(); outHp.reset(); predelayMs.snap(); shimmer.snap(); sizeS.snapTo (0.35f + size * 1.25f); sizeDirty = false; shimFb = 0; // start at the preset size (no glide)
     }
     bool hasTail() const noexcept override { return true; }
     void process (float* L, float* R, int n, const ProcessContext&) noexcept override

@@ -2,13 +2,15 @@
 //   PedalFasterTests                         run every test (exit code = number of failures, capped at 1)
 //   PedalFasterTests --category DSP          run one category (DSP, Presets, Integration)
 //   PedalFasterTests --regression-dir <dir>  where tests/regression/baseline.json lives
-//   PedalFasterTests --calibrate <file.inc> | --export-factory <dir> | --screenshot <file.png>
+//   PedalFasterTests --calibrate <file.inc> | --export-factory <dir> | --export-web-data <file> | --screenshot <file.png>
 
 #include "TestUtils.h"
 
 juce::File gRegressionDir;
 int runCalibration (const juce::File&);
 int exportFactory (const juce::File&);
+int exportWebData (const juce::File&);
+int writeReferenceDI (const juce::File&);
 int renderScreenshot (const juce::File&);
 
 struct StdoutLogger : juce::Logger
@@ -33,6 +35,8 @@ int main (int argc, char** argv)
 
     if (args.contains ("--calibrate"))       return runCalibration (absolute (argAfter ("--calibrate")));
     if (args.contains ("--export-factory"))  return exportFactory (absolute (argAfter ("--export-factory")));
+    if (args.contains ("--export-web-data")) return exportWebData (absolute (argAfter ("--export-web-data")));
+    if (args.contains ("--write-reference-di")) return writeReferenceDI (absolute (argAfter ("--write-reference-di")));
     if (args.contains ("--screenshot"))      return renderScreenshot (absolute (argAfter ("--screenshot")));
 
     gRegressionDir = args.contains ("--regression-dir") ? absolute (argAfter ("--regression-dir"))

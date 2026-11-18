@@ -5,6 +5,11 @@
 
 #include "TestUtils.h"
 #include "presets/FactoryPresets.h"
+#include "dsp/Amps/AmpModels.h"
+#include "dsp/Cabinets/Cabinet.h"
+#ifndef JucePlugin_VersionStringFallback
+ #define JucePlugin_VersionStringFallback "1.0.0"
+#endif
 
 using namespace pft;
 
@@ -81,4 +86,59 @@ int renderScreenshot (const juce::File& file)
     file.deleteFile();
     juce::FileOutputStream os (file);
     return png.writeImageToStream (img, os) ? 0 : 1;
+}
+
+/** --export-web-data <file.json>: registry, amp/cab names, banks and all calibrated factory presets for the web preview. */
+int exportWebData (const juce::File& file)
+{
+    auto obj = [] { return juce::var (new juce::DynamicObject()); };
+    auto set = [] (juce::var& o, const char* k, const juce::var& v) { o.getDynamicObject()->setProperty (k, v); };
+    auto strings = [] (const std::vector<std::string>& v) { juce::Array<juce::var> a; for (auto& s : v) a.add (juce::String (s)); return juce::var (a); };
+
+    auto root = obj();
+    set (root, "version", juce::String (JucePlugin_VersionStringFallback));
+    juce::Array<juce::var> effects;
+    for (auto& e : EffectRegistry::get().all())
+    {
+        auto fx = obj();
+        set (fx, "index", e.index); set (fx, "id", juce::String (e.id)); set (fx, "name", juce::String (e.name));
+        set (fx, "category", juce::String (e.category)); set (fx, "hasMix", e.hasMix); set (fx, "defaultMix", e.defaultMix);
+        juce::Array<juce::var> ps;
+        for (auto& p : e.params)
+        {
+            auto po = obj();
+            set (po, "key", juce::String (p.key)); set (po, "name", juce::String (p.name));
+            set (po, "min", p.minValue); set (po, "max", p.maxValue); set (po, "def", p.defaultValue);
+            set (po, "unit", juce::String (p.unit)); set (po, "log", p.logarithmic); set (po, "int", p.integer);
+            if (p.isChoice()) set (po, "choices", strings (p.choices));
+            ps.add (po);
+        }
+        set (fx, "params", ps);
+        effects.add (fx);
+    }
+    set (root, "effects", effects);
+    set (root, "ampIds", strings (ampTypeIds())); set (root, "ampNames", strings (ampTypeNames()));
+    set (root, "cabIds", strings (cabTypeIds())); set (root, "cabNames", strings (cabTypeNames()));
+    juce::Array<juce::var> banks;
+    for (auto& b : factoryBanks()) { auto bo = obj(); set (bo, "name", juce::String (b.name)); set (bo, "core", b.core); banks.add (bo); }
+    set (root, "banks", banks);
+    juce::Array<juce::var> presets;
+    for (auto& p : factoryPresets()) presets.add (PresetSerializer::toVar (p));
+    set (root, "presets", presets);
+    if (! file.replaceWithText (juce::JSON::toString (root, true))) return 1;
+    std::printf ("wrote %s (%d presets)\n", file.getFullPathName().toRawUTF8(), presets.size());
+    return 0;
+}
+
+/** --write-reference-di <file.f32>: the reference DI performance (48 kHz, 4 s, mono raw float32) used for
+    calibration and the regression baseline, so the web DSP port can be compared against the C++ engine. */
+int writeReferenceDI (const juce::File& file)
+{
+    auto di = makeGuitarDI (48000.0, 4.0);
+    file.deleteFile();
+    juce::FileOutputStream os (file);
+    if (! os.openedOk()) return 1;
+    os.write (di.getReadPointer (0), sizeof (float) * (size_t) di.getNumSamples());
+    std::printf ("wrote %s (%d samples)\n", file.getFullPathName().toRawUTF8(), di.getNumSamples());
+    return 0;
 }

@@ -35,3 +35,15 @@ Approximate performance: the calibration tool renders 3,000 seconds of audio thr
 - **Subjective tone.** Presets are level-calibrated and tested for distinctness, cleanliness and stability, but nobody listened to all 250 with a real guitar. Expect to fine-tune favourites by ear.
 - **HiDPI at 150% and 200% scaling** and keyboard-only navigation of every control (JUCE handles scaling; not visually inspected).
 - **macOS and Linux.** The DSP code is portable C++, but only Windows x64 was built.
+
+## Web preview (`web/index.html`)
+
+| Check | Result |
+|---|---|
+| JS DSP vs C++ engine (`scripts/test-web.ps1`): all 250 presets rendered with the C++ reference DI in headless Chrome | ✅ output level within **0.06 dB** of the C++ regression baseline for every preset (median 0.00 dB), no non-finite samples. Spectral shape median 0.25 dB; the largest differences (≤ 4.1 dB) are presets using the pitch-tracking Harmonizer/Octaver, whose tracking decisions are sensitive to float32 vs double rounding. |
+| Live Web Audio path (`-LiveAudio`): AudioWorklet module loaded from the single file over `file://`, three presets rendered through `AudioWorkletNode` in real Chrome | ✅ worklet loads, outputs finite, about −20 dBFS RMS |
+| Layout at 1400×860 (headless screenshot) | ✅ |
+
+Not verified for the web preview: capturing **system audio / tab audio** with `getDisplayMedia`. It needs the browser's interactive share picker, so it cannot be automated here. Try it in Chrome/Edge: *Audio source → Everything playing on this PC* (choose **Entire screen**, tick **Share system audio**) or *A browser tab*. Firefox and Safari cannot capture system audio. The page includes a feedback guard: if the limiter is pinned while capturing system audio, it mutes Master.
+
+Found during the port: the C++ Hall Reverb glided its size for 400 ms after a preset loaded. It now starts at the preset's size, and the calibration and regression baseline were re-recorded.

@@ -1,5 +1,7 @@
 # Pedal Faster
 
+<p align="center"><img src="docs/waveform.svg" alt="Animated audio waveform" width="100%"></p>
+
 A native C++ guitar amp and multi-effects rig for Windows: **VST3 plugin + standalone app**, built with JUCE 9.0.5 and C++20.
 
 - **30 pedal algorithms**, each its own DSP class: dynamics, gain, filters, EQ, modulation, pitch, delay, reverb and a bitcrusher
@@ -29,6 +31,19 @@ Build outputs go to `%LOCALAPPDATA%\PedalFaster\build`, so OneDrive doesn't sync
 
 `install.bat` also installs the standalone app to `C:\Program Files\Pedal Faster` and adds a Start Menu shortcut. `uninstall.bat` removes them and keeps your presets.
 
+## Web preview (try it without installing)
+
+`web/index.html` (also `docs/index.html`, ready for GitHub Pages) is **one self-contained HTML file** that runs the whole rig in the browser: all 250 presets, the 30 pedals, 6 amps and 5 cabinets, through a JavaScript AudioWorklet port of the C++ DSP. Open it in Chrome or Edge, or run `start-web.bat` to serve it on `http://localhost:8080`. Then pick a source:
+
+| Source | How |
+|---|---|
+| **Everything playing on the PC** | Share **Entire screen** and tick **Share system audio**. Note that the original sound keeps playing too. |
+| **A browser tab** (YouTube, SoundCloud, web Spotify) | Share the tab with **Share tab audio**. The tab is muted, so you hear only the processed sound. |
+| Guitar / mic / line-in | Any audio input (use headphones) |
+| Demo guitar / audio file | A built-in looping DI guitar, or any WAV/MP3/FLAC |
+
+Presets you save in the browser can be exported as `.pfpreset`/`.pfbank` and opened in the VST3, and vice versa. Plugin-only features: custom impulse responses, MIDI, DAW automation and state, and oversampling identical to the plugin's (the web build uses its own 2x/4x filters). `scripts/test-web.ps1` renders all 250 presets through the JS engine and checks them against the C++ engine's regression baseline: every preset is within 0.06 dB.
+
 ## Scripts
 
 | Script | Purpose |
@@ -38,6 +53,9 @@ Build outputs go to `%LOCALAPPDATA%\PedalFaster\build`, so OneDrive doesn't sync
 | `scripts/validate-windows.ps1` | pluginval (strictness 10) + Steinberg VST3 validator (`-BuildSteinbergValidator`) |
 | `scripts/package-windows.ps1` | Build `dist\PedalFaster-1.0.0-win64.zip` (VST3, exe, installer scripts, preset JSON, manual) |
 | `install.bat` / `uninstall.bat` | Install or remove the VST3 and standalone app |
+| `scripts/build-web.ps1` | Build the single-file web preview `web/index.html` + `docs/index.html` (`-RefreshData` re-exports presets from the C++ build) |
+| `scripts/test-web.ps1` | Web DSP parity against the C++ engine (`-LiveAudio` also runs the real AudioWorklet path in a browser window) |
+| `start-web.bat` | Serve the web preview on `http://localhost:8080` |
 
 ## Status
 
@@ -66,6 +84,8 @@ src/
   presets/               Preset model, JSON serializer/validator, factory library, manager
   ui/                    Theme, widgets, preset browser, signal-chain view, parameter editor
 resources/presets/factory/   the factory library exported as JSON (reference copy)
+web/src/                 web preview sources: index.html, style.css, app.js, dsp-worklet.js (JS port of src/dsp), rig-data.json
+web/index.html           the built single-file web preview (GENERATED; copied to docs/index.html)
 tests/                   DSP, preset and integration tests + calibration/export tools
 scripts/                 PowerShell build / test / validate / package
 ```

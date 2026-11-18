@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pedal Faster</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">PEDAL <span>FASTER</span><small>WEB PREVIEW</small></div>
+    <button id="prev" title="Previous preset (Left arrow)">&lt;</button>
+    <button id="presetName" class="preset-name" title="Current preset">Init</button>
+    <button id="next" title="Next preset (Right arrow)">&gt;</button>
+    <button id="fav" title="Favourite">&#9734;</button>
+    <button id="save" title="Save as a browser user preset">Save</button>
+    <button id="more" title="Import / export presets (compatible with the VST3)">...</button>
+    <input id="search" type="search" placeholder="Search presets, tags..." aria-label="Search presets">
+    <select id="category" aria-label="Category"></select>
+    <div class="grow"></div>
+    <div class="source">
+      <button id="startBtn" class="on" title="Choose an audio source">&#9654; Audio source</button>
+      <span id="status" class="status">Not running</span>
+    </div>
+    <div class="sep"></div>
+    <select id="quality" title="Amp oversampling" aria-label="Quality"><option value="0">Eco</option><option value="1" selected>Normal</option><option value="2">High</option></select>
+    <button id="masterBtn">Master</button>
+    <button id="tunerBtn">Tuner</button>
+    <button id="bypass" class="danger" title="A/B: hear the unprocessed input (B)">BYPASS</button>
+    <div class="meters"><span>IN</span><div class="meter"><i id="inMeter"></i></div><span>OUT</span><div class="meter"><i id="outMeter"></i></div></div>
+  </header>
+
+  <main class="main">
+    <section class="panel browser" aria-label="Preset browser">
+      <div class="filters">
+        <select id="source"><option value="all">All presets</option><option value="factory">Factory</option><option value="user">User (this browser)</option><option value="fav">Favourites</option></select>
+        <select id="sort"><option value="bank">Sort: Bank</option><option value="name">Sort: Name</option><option value="cat">Sort: Category</option><option value="gain">Sort: Gain</option></select>
+      </div>
+      <div class="count" id="count"></div>
+      <div class="list" id="list" role="listbox" aria-label="Presets"></div>
+    </section>
+    <section class="panel chain" id="chain" aria-label="Signal chain"></section>
+    <section class="panel editor" id="editor" aria-label="Parameters"></section>
+  </main>
+
+  <footer class="bottombar" id="bottom"></footer>
+</div>
+
+<div class="overlay" id="startDialog">
+  <div class="dialog">
+    <h1>PEDAL <span>FASTER</span> &mdash; web preview</h1>
+    <p>The full 250-preset rig running in your browser. Pick what to send through it:</p>
+    <div class="choices">
+      <button data-src="system"><b>&#128421; Everything playing on this PC</b><span>Share your <u>entire screen</u> and tick <u>Share system audio</u>. The rig processes whatever plays (Spotify, YouTube, a DAW...).</span></button>
+      <button data-src="tab"><b>&#128452; A browser tab</b><span>Share a tab (YouTube, SoundCloud, web Spotify) with <u>Share tab audio</u>. The tab is muted, so you only hear the processed sound.</span></button>
+      <button data-src="mic"><b>&#127928; Guitar / mic / line-in</b><span>Use an audio interface input. Play your guitar through the rig (use headphones).</span></button>
+      <button data-src="demo"><b>&#127926; Built-in demo guitar</b><span>A looping clean DI guitar part. No permissions needed.</span></button>
+      <button data-src="file"><b>&#128193; An audio file</b><span>Open a WAV / MP3 / FLAC from disk and loop it through the rig.</span></button>
+      <button data-close><b>Just browse</b><span>Look around without audio. You can start audio later.</span></button>
+    </div>
+    <p class="warn" id="systemWarn">Tip for "everything on this PC": the original sound keeps playing too, so you'll hear dry + processed together. For a clean preview, share a <b>browser tab</b>, or send the source app to another output device (Windows Settings &rarr; Sound &rarr; Volume mixer).</p>
+    <p style="font-size:11px">Chrome or Edge recommended. Audio never leaves your computer. Custom impulse responses, MIDI and the DAW features are in the VST3 / standalone app.</p>
+  </div>
+</div>
+
+<div class="tuner" id="tuner" hidden>
+  <div class="note-label" style="color:var(--dim);font-weight:700;font-size:12px">TUNER</div>
+  <div class="note" id="tunerNote">--</div>
+  <div class="bar"><i id="tunerNeedle" style="left:50%"></i></div>
+  <div id="tunerInfo" style="color:var(--dim)">Play a single note</div>
+</div>
+<div class="toast" id="toast" hidden></div>
+<input type="file" id="fileInput" accept="audio/*" hidden>
+<input type="file" id="presetInput" accept=".pfpreset,.pfbank,.json" hidden>
+
+<script type="text/plain" id="worklet-src" src="dsp-worklet.js"></script>
+<script src="rig-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

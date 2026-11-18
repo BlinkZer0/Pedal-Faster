@@ -30,6 +30,7 @@ Copy-Item (Join-Path $repo 'install.bat') $stage
 Copy-Item (Join-Path $repo 'uninstall.bat') $stage
 Copy-Item (Join-Path $repo 'LICENSES.md') $stage
 Copy-Item (Join-Path $repo 'docs\USER_MANUAL.md') $stage
+Copy-Item (Join-Path $repo 'web\index.html') (Join-Path $stage 'Pedal Faster Web Preview.html')
 & $tests --export-factory (Join-Path $stage 'Factory Presets (JSON)') | Out-Null
 
 @"
@@ -40,6 +41,7 @@ Install:   double-click install.bat (asks for administrator rights)
              Standalone -> C:\Program Files\Pedal Faster\Pedal Faster.exe
 Manual:    copy the "Pedal Faster.vst3" folder into C:\Program Files\Common Files\VST3\
 Portable:  "Pedal Faster.exe" runs from any folder (choose your audio interface in Options > Audio Settings).
+Preview:   open "Pedal Faster Web Preview.html" in Chrome/Edge to try every preset in the browser
 Uninstall: uninstall.bat (your presets in %APPDATA%\Pedal Faster are kept)
 
 The factory presets are built into the plugin; the JSON copies are for reference / sharing.
